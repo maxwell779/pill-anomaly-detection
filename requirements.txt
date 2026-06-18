@@ -3,3 +3,4 @@ scikit-learn
 opencv-python-headless
 numpy
 joblib
+plotly

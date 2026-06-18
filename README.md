@@ -41,6 +41,27 @@
 - **Color-Specific k-NN: Acc 0.766 · Recall 0.844 · Precision 0.875 · F2 0.85 · ROC-AUC 0.73.**
 - 한계(정직): 색상·오염 결함은 비지도 이상탐지로 잡기 어려워 일부 놓침(개선과제).
 
+## 📊 실험 결과 & 시각화
+
+11개 KNN 변형 비교 (F2-score 기준):
+
+| 모델 | 전처리 | Acc | Recall | F2 |
+|---|---|---|---|---|
+| k-NN Baseline | HOG only | 0.62 | 0.57 | 0.62 |
+| Final Weighted k-NN | Blur+가중 Color | 0.84 | **1.00** | 0.964 ⚠️과적합(전부 불량) |
+| **★ Color-Specific k-NN (BEST)** | **H(64)+가중10x, PCA120** | **0.766** | **0.844** | **0.85** |
+
+> ⚠️ Final Weighted는 임계 0으로 "전부 불량 판정"하는 과적합 → **배제**하고 실제 변별되는 Color-Specific를 본인이 BEST로 선정.
+
+<p>
+<img src="assets/f2_comparison.png" width="46%"/> <img src="assets/recall.png" width="46%"/>
+</p>
+<p>
+<img src="assets/confusion_matrix.png" width="46%"/> <img src="assets/defect_sample.png" width="46%"/>
+</p>
+
+> 좌상: 모델별 F2 비교 · 우상: 결함 유형별 Recall · 좌하: 혼동행렬 · 우하: 결함 7종 예시
+
 ## 🖥 데모 (Streamlit) — 실모델 구동
 업로드한 알약 이미지를 **학습된 Color-Specific k-NN으로 실제 PASS/FAIL 판정**(여러 장 배치 + 민감도 조절).
 ```bash
