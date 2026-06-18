@@ -1,5 +1,9 @@
 # 💊 알약 외관 검사 — 비지도 이상탐지 (KNN + PCA)
 
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pill-anomaly-detection-azlwvnidzu4zjkahewyadp.streamlit.app/)
+
+**🖥 [▶️ 라이브 데모 (Streamlit)](https://pill-anomaly-detection-azlwvnidzu4zjkahewyadp.streamlit.app/)** — 실제 학습 모델로 바로 구동(내장 샘플 포함)
+
 > 정상 알약만 학습해(비지도 One-Class) 7종 결함을 잡는 이미지 이상탐지. 불량을 놓치면 치명적이라 Accuracy 대신 **Recall 가중 F2-score**로 평가. **학습된 모델로 실제 PASS/FAIL 판정하는 Streamlit 앱 포함.**
 
 | 항목 | 내용 |
