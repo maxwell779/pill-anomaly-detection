@@ -62,7 +62,7 @@ def score_arr(img):
 scaler, pca, knn, meta = load_model()
 
 st.markdown('<div class="hero"><h1>💊 알약 외관 검사 시스템</h1>'
-            '<p>비지도 이상탐지(One-Class) · 정상 알약만 학습해 7종 결함을 PASS/FAIL 판정 · KDT 2팀(본인=KNN 모델 담당)</p></div>',
+            '<p>비지도 이상탐지(One-Class) · 정상 알약만 학습해 7종 결함을 PASS/FAIL 판정 · KDT 팀(본인=KNN 모델 담당)</p></div>',
             unsafe_allow_html=True)
 
 with st.sidebar:
