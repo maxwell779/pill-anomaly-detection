@@ -6,12 +6,12 @@
 
 <img src="assets/app_demo.png" width="92%"/>
 
-> 정상 알약만 학습해(비지도 One-Class) 7종 결함을 잡는 이미지 이상탐지. 불량을 놓치면 치명적이라 Accuracy 대신 **Recall 가중 F2-score**로 평가. **학습된 모델로 실제 PASS/FAIL 판정하는 Streamlit 앱 포함.**
+> 정상 알약만 학습해(비지도 One-Class) 7종 결함을 잡는 이미지 이상탐지. 불량 하나를 놓치는(FN) 비용이 커서 Accuracy 대신 **Recall 가중 F2-score**로 평가. **학습된 모델로 실제 PASS/FAIL 판정하는 Streamlit 앱 포함.**
 
 | 항목 | 내용 |
 |---|---|
 | 기간 | 2026.03.17 ~ 2026.03.23 |
-| 팀 | 2팀 (KDT 팀 프로젝트) |
+| 팀 | KDT 팀 프로젝트 |
 | **나의 역할** | **KNN 이상탐지 모델 담당 (PCA 도입) · 여러 모델 비교 후 BEST 선정** |
 
 > ℹ️ KDT 부트캠프 팀 프로젝트입니다. 본 저장소는 **본인의 KNN 모델** 작업입니다.
