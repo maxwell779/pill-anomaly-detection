@@ -14,15 +14,22 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 MD, SP = os.path.join(HERE, "models"), os.path.join(HERE, "samples")
 
 st.markdown("""<style>
-#MainMenu,footer{visibility:hidden;}
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+html, body, [class*="css"], .stMarkdown, [data-testid="stMetricValue"], [data-testid="stMetricLabel"]{
+  font-family:'Pretendard','Malgun Gothic',sans-serif;}
+#MainMenu,footer,[data-testid="stToolbar"]{visibility:hidden;}
 .block-container{padding-top:1.3rem;max-width:1300px;}
-[data-testid="stMetric"]{background:#fff;border:1px solid #eef0f2;border-radius:14px;
-  padding:16px 18px;box-shadow:0 1px 4px rgba(16,36,43,.06);}
+[data-testid="stMetric"]{background:#fff;border:1px solid #ece8f5;border-radius:16px;
+  padding:16px 18px;box-shadow:0 2px 10px rgba(42,16,82,.05);transition:transform .15s, box-shadow .15s;}
+[data-testid="stMetric"]:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(124,58,237,.14);}
 [data-testid="stMetricLabel"] p{color:#64748b;font-weight:600;}
-h1,h2,h3{color:#2a1052;}
-.hero{background:linear-gradient(100deg,#7c3aed,#10242b);color:#fff;border-radius:16px;
-  padding:22px 26px;margin-bottom:18px;}
-.hero h1{color:#fff;margin:0;font-size:1.7rem;} .hero p{color:#e3d7fb;margin:.3rem 0 0;}
+[data-testid="stMetricValue"]{color:#2a1052;font-weight:800;}
+h1,h2,h3{color:#2a1052;letter-spacing:-.3px;}
+.hero{background:linear-gradient(110deg,#7c3aed 0%,#10242b 100%);color:#fff;border-radius:18px;
+  padding:24px 30px;margin-bottom:18px;box-shadow:0 12px 32px rgba(124,58,237,.22);}
+.hero h1{color:#fff;margin:0;font-size:1.85rem;font-weight:800;letter-spacing:-.5px;} .hero p{color:#e3d7fb;margin:.4rem 0 0;font-size:.97rem;}
+.hero .chip{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);
+  color:#f3ecff;border-radius:20px;padding:4px 13px;font-size:.8rem;font-weight:600;margin:11px 6px 0 0;}
 .stamp{font-size:2rem;font-weight:900;text-align:center;border-radius:12px;padding:10px;margin-top:8px;}
 .s-pass{background:#dcfce7;color:#15803d;border:3px solid #22c55e;}
 .s-fail{background:#fee2e2;color:#b91c1c;border:3px solid #ef4444;}
@@ -62,7 +69,9 @@ def score_arr(img):
 scaler, pca, knn, meta = load_model()
 
 st.markdown('<div class="hero"><h1>💊 알약 외관 검사 시스템</h1>'
-            '<p>비지도 이상탐지(One-Class) · 정상 알약만 학습해 7종 결함을 PASS/FAIL 판정 · KDT 팀(본인=KNN 모델 담당)</p></div>',
+            '<p>비지도 이상탐지(One-Class) · 정상 알약만 학습해 7종 결함을 PASS/FAIL 판정 · KDT 팀(본인=KNN 모델 담당)</p>'
+            '<div><span class="chip">💊 7종 결함 탐지</span><span class="chip">🎯 F2 0.85 · Recall 0.84</span>'
+            '<span class="chip">🔬 KNN+PCA · 11종 비교 BEST</span></div></div>',
             unsafe_allow_html=True)
 
 with st.sidebar:
