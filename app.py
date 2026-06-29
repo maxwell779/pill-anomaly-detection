@@ -14,9 +14,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 MD, SP = os.path.join(HERE, "models"), os.path.join(HERE, "samples")
 
 st.markdown("""<style>
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 html, body, [class*="css"], .stMarkdown, [data-testid="stMetricValue"], [data-testid="stMetricLabel"]{
-  font-family:'Pretendard','Malgun Gothic',sans-serif;}
+  font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',sans-serif;}
+/* rerun 시 요소 재렌더로 인한 흔들림(FOUT 리플로우) 억제 */
+[data-testid="stElementContainer"], .element-container{animation:none !important;}
 #MainMenu,footer,[data-testid="stToolbar"]{visibility:hidden;}
 .block-container{padding-top:1.3rem;max-width:1300px;}
 [data-testid="stMetric"]{background:#fff;border:1px solid #ece8f5;border-radius:16px;
